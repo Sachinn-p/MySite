@@ -100,8 +100,8 @@ function App() {
       <header className={`sticky top-0 z-50 ${isDarkMode ? 'bg-slate-800/80 backdrop-blur-sm' : 'bg-white/80 backdrop-blur-sm'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-4xl font-bold mb-6 text-white">Sachinn P</h1>
-            <nav className="hidden md:flex space-x-8">
+          <h1 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-black'}`}>Sachinn P</h1>
+          <nav className="hidden md:flex space-x-8">
               <a href="#myself" className="hover:text-blue-500 transition-colors">Myself</a>
               <a href="#skills" className="hover:text-blue-500 transition-colors">Skills</a>
               <a href="#experience" className="hover:text-blue-500 transition-colors">Experience</a>
@@ -121,7 +121,7 @@ function App() {
         <section id="myself" className="mb-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-            <h2 className="text-4xl font-bold mb-6 text-white">Hello, I'm Sachinn.</h2>
+            <h2 className={`text-4xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-black'}`}>Hello, I'm Sachinn.</h2>
 
               <ul className="space-y-4">
                 <li className="flex items-start p-4 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-sm">
@@ -144,7 +144,7 @@ function App() {
                 <img 
                   src={pfimg} 
                   alt="Profile" 
-                  className="w-[250px] h-[310px] rounded-[40px] object-cover shadow-md my-8 mx-auto block filter  grayscale-[10%] brightness-25 contrast-40 border-1 border-[var(--border-color)]"/>
+                  className="w-[250px] h-[350px] rounded-[10px] object-cover shadow-md my-8 mx-auto block filter  grayscale-[0%] brightness-150 contrast-10"/>
               </div>
             </div>
           </div>
