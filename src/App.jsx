@@ -138,15 +138,23 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div className="flex justify-center">
-              <div className="relative group">
-                <div className="absolute -inset-1  rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <img 
-                  src={pfimg} 
-                  alt="Profile" 
-                  className="w-[250px] h-[350px] rounded-[10px] object-cover shadow-md my-8 mx-auto block filter  grayscale-[0%] brightness-150 contrast-10"/>
+
+            <div className="flex justify-center items-center">
+              <div className="w-[370px] h-[370px] rounded-full p-1 bg-gradient-to-r from-[#4e54c8] to-[#8f94fb]">
+                <div className="w-full h-full rounded-full bg-white p-1">
+                  <img 
+                    src={pfimg} 
+                    alt="Profile" 
+                    className="w-full h-full object-cover rounded-full shadow-xl transition-transform duration-500 transform hover:scale-105 grayscale-[5%] brightness-105 contrast-110"
+                  />
+                </div>
               </div>
             </div>
+
+
+
+
+
           </div>
         </section>
 
