@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faDownload } from '@fortawesome/free-solid-svg-icons';
 import resumePDF from '../../assets/files/Deedy_CV_Sachinn_P.pdf'; 
+import profileImg from '../../assets/img/my-profile-img.jpeg'; 
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <div className="row">
           <div className="col-lg-4">
-            <img src="/src/assets/img/my-profile-img.jpeg" className="img-fluid rounded about-img" alt="Profile" />
+            <img src={profileImg} className="img-fluid rounded about-img" alt="Profile" />
             <div className="text-center mt-3">
               <a href={resumePDF} download className="resume-download-btn" data-aos="fade-up" data-aos-delay="200">
                 <FontAwesomeIcon icon={faDownload} /> Download Resume

@@ -7,6 +7,7 @@ import {
 import {
   faHouse, faUser, faFile, faImage, faServer, faEnvelope, faBars, faXmark
 } from '@fortawesome/free-solid-svg-icons';
+import profileImg from '../../assets/img/my-profile-img.jpeg';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -72,7 +73,7 @@ const Header = () => {
 
           {/* Profile Image */}
           <div className="profile-img">
-            <img src="/src/assets/img/my-profile-img.jpeg" alt="Profile" className="profile-pic" />
+            <img src={profileImg} alt="Profile" className="profile-pic" />
           </div>
 
           {/* Site Name */}

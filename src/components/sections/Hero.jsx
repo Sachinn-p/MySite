@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
+import heroBg from '../../assets/img/hero-bg.jpeg';
 
 const Hero = () => {
   const typedRef = useRef(null);
@@ -20,7 +21,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero section dark-background">
-      <img src="/src/assets/img/hero-bg.jpeg" alt="" data-aos="fade-in" className="" />
+      <img src={heroBg} alt="" data-aos="fade-in" className="" />
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <h1>Sachinn P</h1>
         <p>I'm <span ref={typedRef}></span></p>
