@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+
+# npm
+package-lock.json
