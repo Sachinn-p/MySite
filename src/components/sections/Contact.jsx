@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faLocationDot, 
@@ -10,59 +11,7 @@ import {
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [status, setStatus] = useState({
-    loading: false,
-    error: null,
-    success: false
-  });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ loading: true, error: null, success: false });
-
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      const mailtoLink = `mailto:sachinn2413@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-        `Name: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}
-
-Best regards,
-${formData.name}`
-      )}`;
-      
-      const mailtoWindow = window.open(mailtoLink, '_blank');
-      if (mailtoWindow) {
-        setStatus({ loading: false, error: null, success: true });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error('Popup blocked');
-      }
-    } catch (error) {
-      setStatus({ 
-        loading: false, 
-        error: error.message === 'Popup blocked' 
-          ? 'Please enable popups to send email, or copy the content and send manually.' 
-          : 'Failed to send message. Please try again.',
-        success: false 
-      });
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [state, handleSubmit] = useForm(import.meta.env.VITE_FORMSPREE_FORM_ID);
 
   const contactInfo = [
     {
@@ -140,79 +89,92 @@ ${formData.name}`
           </div>
 
           <div className="col-lg-6">
-            <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="300">
-              <div className="row gy-3">
-                <div className="col-md-6">
-                  <input
-                    type="text"
-                    name="name"
-                    className="form-control"
-                    placeholder="Your Name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="col-md-6">
-                  <input
-                    type="email"
-                    name="email"
-                    className="form-control"
-                    placeholder="Your Email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="col-12">
-                  <input
-                    type="text"
-                    name="subject"
-                    className="form-control"
-                    placeholder="Subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="col-12">
-                  <textarea
-                    name="message"
-                    rows="6"
-                    className="form-control"
-                    placeholder="Message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="col-12">
-                  <button 
-                    type="submit" 
-                    className="submit-btn" 
-                    disabled={status.loading}
-                  >
-                    {status.loading ? (
-                      <><FontAwesomeIcon icon={faSpinner} spin /> Sending...</>
-                    ) : (
-                      <><FontAwesomeIcon icon={faPaperPlane} /> Send Message</>
-                    )}
-                  </button>
-                </div>
+            {state.succeeded ? (
+              <div className="alert alert-success" data-aos="fade-up" data-aos-delay="300">
+                <h4>Thank you for reaching out!</h4>
+                <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
               </div>
-              
-              {status.error && (
-                <div className="alert alert-danger mt-3">
-                  {status.error}
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-up" data-aos-delay="300">
+                <div className="row gy-3">
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                    <ValidationError 
+                      prefix="Name" 
+                      field="name"
+                      errors={state.errors}
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      placeholder="Your Email"
+                      required
+                    />
+                    <ValidationError 
+                      prefix="Email" 
+                      field="email"
+                      errors={state.errors}
+                    />
+                  </div>
+                  <div className="col-12">
+                    <input
+                      type="text"
+                      name="subject"
+                      className="form-control"
+                      placeholder="Subject"
+                      required
+                    />
+                    <ValidationError 
+                      prefix="Subject" 
+                      field="subject"
+                      errors={state.errors}
+                    />
+                  </div>
+                  <div className="col-12">
+                    <textarea
+                      name="message"
+                      rows="6"
+                      className="form-control"
+                      placeholder="Message"
+                      required
+                    />
+                    <ValidationError 
+                      prefix="Message" 
+                      field="message"
+                      errors={state.errors}
+                    />
+                  </div>
+                  <div className="col-12">
+                    <button 
+                      type="submit" 
+                      className="submit-btn" 
+                      disabled={state.submitting}
+                    >
+                      {state.submitting ? (
+                        <><FontAwesomeIcon icon={faSpinner} spin /> Sending...</>
+                      ) : (
+                        <><FontAwesomeIcon icon={faPaperPlane} /> Send Message</>
+                      )}
+                    </button>
+                  </div>
                 </div>
-              )}
-              
-              {status.success && (
-                <div className="alert alert-success mt-3">
-                  Message sent successfully!
-                </div>
-              )}
-            </form>
+                
+                {state.errors && state.errors.length > 0 && (
+                  <div className="alert alert-danger mt-3">
+                    There was an error sending your message. Please try again.
+                  </div>
+                )}
+              </form>
+            )}
           </div>
         </div>
       </div>

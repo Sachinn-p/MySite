@@ -1,11 +1,68 @@
-# React + Vite
+# MySite - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Modern, responsive design
+- 📧 Contact form with Formspree integration
+- 🚀 Fast loading with Vite
+- ⚡ Hot Module Replacement (HMR)
+- 📱 Mobile-friendly interface
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Copy the environment variables file:
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Configure your environment variables in `.env`:
+   - `VITE_FORMSPREE_FORM_ID`: Your Formspree form ID (get it from [formspree.io](https://formspree.io/))
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Environment Variables
+
+This project uses the following environment variables:
+
+- `VITE_FORMSPREE_FORM_ID`: Required for the contact form to work. Get your form ID by creating a form at [Formspree](https://formspree.io/).
+
+**Note**: All environment variables for Vite must be prefixed with `VITE_` to be accessible in the client-side code.
+
+## Contact Form
+
+The contact form is powered by Formspree, which provides a simple way to handle form submissions without a backend. The form includes:
+
+- Real-time validation
+- Loading states
+- Success/error feedback
+- Spam protection (via Formspree)
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## Tech Stack
+
+- **React** - UI framework
+- **Vite** - Build tool and dev server
+- **Formspree** - Form handling service
+- **FontAwesome** - Icons
+- **Bootstrap** - CSS framework
+- **AOS** - Animations on scroll
 
 ## Expanding the ESLint configuration
 
