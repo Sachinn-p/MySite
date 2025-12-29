@@ -14,7 +14,7 @@ const Portfolio = () => {
     });
   }, []);
 
-const projects = [
+  const projects = [
   {
     title: 'Quiz App',
     description: 'Developed a comprehensive quiz application using FastAPI as the backend, enabling efficient data processing and management. Built the frontend using ReactJS, integrated an LLM (Llama) for dynamic question generation and evaluation based on user input. Connected both frontend and backend, and managed the API connectivity.',
@@ -49,10 +49,15 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
     link: 'https://github.com/Sachinn-p/Pishing_Website_Detection_by_url',
     technologies: ['Python', 'URL Analysis', 'Security']
+  },
+  {
+    title: 'SOC Agent Automation Platform',
+    description: 'Designed an automated SOC agent integrating Wazuh SIEM, event correlation logic, and Azure cloud log aggregation. Implemented dynamic threat-detection workflows and automated incident-response mechanisms. Strengthened system reliability through observability, structured data flows, and robust backend orchestration.',
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80',
+    link: 'https://github.com/Sachinn-p/SOC_Agent_Automation_Platform',
+    technologies: ['Python', 'Streamlit', 'FastAPI', 'Wazuh SIEM', 'Azure', 'Groq LLM', 'Event Correlation']
   }
 ];
-
-
 
   return (
     <section id="portfolio" className="portfolio section light-background">
@@ -64,7 +69,7 @@ const projects = [
       <div className="container">
         <div className="row" data-aos="fade-up" data-aos-delay="100">
           {projects.map((project, index) => (
-            <div className="col-lg-4 col-md-6 portfolio-item" key={index}>
+            <div className="col-lg-4 col-md-6 portfolio-item mb-4" key={index}>
               <div className="portfolio-wrap">
                 <img src={project.image} className="img-fluid" alt={project.title} />
                 <div className="portfolio-info">

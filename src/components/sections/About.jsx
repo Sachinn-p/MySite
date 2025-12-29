@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faDownload } from '@fortawesome/free-solid-svg-icons';
-import resumePDF from '../../assets/files/Deedy_CV_Sachinn_P.pdf'; 
+import resumePDF from '../../assets/files/Sachinn_P_Resume.pdf'; 
 import profileImg from '../../assets/img/my-profile-img.jpeg'; 
 
 const About = () => {
@@ -45,8 +45,7 @@ const About = () => {
                 <ul>
                   <li><FontAwesomeIcon icon={faChevronRight} /> <strong>CGPA:</strong> <span>7.9</span></li>
                   <li><FontAwesomeIcon icon={faChevronRight} /> <strong>Year:</strong> <span>2022 - 2026</span></li>
-                  <li><FontAwesomeIcon icon={faChevronRight} /> <strong>Website:</strong> <span>sachinnp.netlify.app</span></li>
-                  <li><FontAwesomeIcon icon={faChevronRight} /> <strong>School:</strong> <span>Sri Vani Matric. HR. SEC. School (86.6%)</span></li>
+                  <li><FontAwesomeIcon icon={faChevronRight} /> <strong>School:</strong> <span>Sri Vani Matric. HR. SEC. School</span></li>
                 </ul>
               </div>
             </div>

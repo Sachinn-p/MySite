@@ -3,12 +3,12 @@ import React from 'react';
 const Resume = () => {
   const certifications = [
     'POSTMAN - API Fundamentals Student Expert',
+    'Microsoft Azure Fundamentals (AZ-900)',
     'Guvi - Python Zero to Hero',
     'Guvi - Machine Learning 101',
-    'MongoDB University',
+    'MongoDB ICT Academy',
     'Kaggle - Pandas',
-    'Kaggle - Intro to Deep Learning',
-    'Websino Technology Internship'
+    'Kaggle - Intro to Deep Learning'
   ];
 
   const achievements = [
@@ -55,13 +55,16 @@ const Resume = () => {
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 className="resume-title">Professional Experience</h3>
             <div className="resume-item">
-              <h4>Software Engineer Intern</h4>
-              <h5>Jan 2025 - Present</h5>
+              <h4>Backend Intern</h4>
+              <h5>Jan 2025 - Jun 2025</h5>
               <p><em>WAY2SKILLS, Remote</em></p>
               <ul>
-                <li>Working as a software engineer, focusing on developing real-world applications.</li>
-                <li>Engaging in solving practical problems while expanding knowledge across various domain fields.</li>
-                <li>Primarily enhancing skills in backend engineering.</li>
+                <li>Engineered low-latency, async FastAPI services with precise attention to detail, well-structured API architecture, and clean RESTful design.</li>
+                <li>Built scalable backend modules with strong testability, optimized MongoDB interactions, and refined data flows.</li>
+                <li>Implemented JWT-based authentication to secure API access and enforce controlled identity flows.</li>
+                <li>Participated across all product lifecycle stages—design, implementation, testing, optimization, and CI/CD-driven deployment.</li>
+                <li>Collaborated with frontend teams and contributed to architectural decisions involving API versioning and seamless backend–frontend integration.</li>
+                <li>Enhanced backend reliability through thoughtful data modeling, improved query performance, and observability-focused design.</li>
               </ul>
             </div>
             <div className="resume-item">
@@ -81,6 +84,27 @@ const Resume = () => {
                   <li key={index}>{achievement}</li>
                 ))}
               </ul>
+            </div>
+
+            <h3 className="resume-title">Coding Profiles</h3>
+            <div className="resume-item">
+              <div className="coding-profiles">
+                <div className="profile-link mb-3">
+                  <strong>LeetCode:</strong> <a href="https://leetcode.com/u/sachinn2413" target="_blank" rel="noopener noreferrer">leetcode.com/u/sachinn2413</a>
+                </div>
+                <div className="profile-link mb-3">
+                  <strong>GeeksforGeeks:</strong> <a href="https://geeksforgeeks.org/user/sachin9x4a" target="_blank" rel="noopener noreferrer">geeksforgeeks.org/user/sachin9x4a</a>
+                </div>
+                <div className="profile-link mb-3">
+                  <strong>GitHub:</strong> <a href="https://github.com/Sachinn-p" target="_blank" rel="noopener noreferrer">github.com/Sachinn-p</a>
+                </div>
+                <div className="profile-link mb-3">
+                  <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sachinn-p" target="_blank" rel="noopener noreferrer">linkedin.com/in/sachinn-p</a>
+                </div>
+                <div className="profile-link">
+                  <strong>Medium Blog:</strong> <a href="https://medium.com/@sachinn2413" target="_blank" rel="noopener noreferrer">medium.com/@sachinn2413</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
