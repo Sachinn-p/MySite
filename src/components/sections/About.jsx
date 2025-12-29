@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faDownload } from '@fortawesome/free-solid-svg-icons';
-import resumePDF from '../../assets/files/Sachinn_P_Resume.pdf'; 
+import resumePDF from '../../assets/files/SACHINN_P_Resume.pdf'; 
 import profileImg from '../../assets/img/my-profile-img.jpeg'; 
 
 const About = () => {
