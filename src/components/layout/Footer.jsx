@@ -1,16 +1,23 @@
-import React from 'react';
+import { footerLinks, siteMeta } from '../../content/siteContent';
+import { getLinkProps } from '../../utils/linkProps';
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer id="footer" className="footer position-relative light-background">
-      <div className="container">
-        <div className="copyright text-center">
-          <p>© <span>Copyright</span> <strong className="px-1 sitename">Sachinn P</strong> <span>All Rights Reserved</span></p>
+    <footer id="footer" className="reveal">
+      <div className="footer-inner">
+        <div>
+          &copy; 2026 {siteMeta.name}. {siteMeta.motto}
         </div>
-        
+        <div className="footer-links">
+          {footerLinks.map((link) => (
+            <a key={link.label} {...getLinkProps(link.href)}>
+              {link.label}
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

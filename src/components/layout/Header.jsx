@@ -1,116 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub, faLinkedin, faTelegram
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faHouse, faUser, faFile, faImage, faServer, faEnvelope, faBars, faXmark
-} from '@fortawesome/free-solid-svg-icons';
-import profileImg from '../../assets/img/my-profile-img.jpeg';
+import { useEffect, useState } from 'react';
+import { navItems } from '../../content/siteContent';
 
-const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleNav = () => {
-    setIsNavOpen(prev => !prev);
-  };
-
-  const handleNavClick = (e) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute('href').slice(1);
-    const element = document.getElementById(targetId);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop,
-        behavior: 'smooth'
-      });
-      setIsNavOpen(false);
-    }
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   useEffect(() => {
-    const handleEscKey = (e) => {
-      if (e.key === 'Escape') setIsNavOpen(false);
-    };
+    if (!menuOpen) {
+      return undefined;
+    }
 
-    const handleClickOutside = (e) => {
-      const header = document.getElementById('header');
-      const toggle = document.querySelector('.header-toggle');
-      if (isNavOpen && header && !header.contains(e.target) && !toggle.contains(e.target)) {
-        setIsNavOpen(false);
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
       }
     };
 
-    window.addEventListener('keydown', handleEscKey);
-    document.addEventListener('mousedown', handleClickOutside);
+    const handleResize = () => {
+      if (window.innerWidth > 760) {
+        closeMenu();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('keydown', handleEscKey);
-      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleEscape);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [isNavOpen]);
+  }, [menuOpen]);
 
   return (
-    <>
-      {/* Hamburger Toggle Button */}
-      <FontAwesomeIcon
-        icon={faBars}
-        className="header-toggle"
-        onClick={toggleNav}
-        aria-label="Open menu"
-      />
-
-      {isNavOpen && (
-        <header id="header" className="header mobile-nav-active dark-background">
-          {/* Close Button */}
-          <FontAwesomeIcon
-            icon={faXmark}
-            className="header-toggle-close"
-            onClick={toggleNav}
-            aria-label="Close menu"
-          />
-
-          {/* Profile Image */}
-          <div className="profile-img">
-            <img src={profileImg} alt="Profile" className="profile-pic" />
-          </div>
-
-          {/* Site Name */}
-          <Link to="/" className="logo d-flex align-items-center justify-content-center">
-            <h1 className="sitename">Sachinn P</h1>
-          </Link>
-
-          {/* Social Links */}
-          <div className="social-links text-center">
-            <a href="https://github.com/Sachinn-p" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} />
+    <header className="site-nav">
+      <div className="site-nav-inner">
+        <a className="site-logo" href="#hero" onClick={closeMenu}>
+          SP_
+        </a>
+        <nav className="nav-links" aria-label="Section navigation">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
             </a>
-            <a href="https://linkedin.com/in/sachinn-p" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href="https://t.me/Sachinn_P" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTelegram} />
-            </a>
-            <a href="https://geeksforgeeks.org/user/sachin9x4a" target="_blank" rel="noopener noreferrer" className="gfg">GFG</a>
-            <a href="https://leetcode.com/u/sachinn2413" target="_blank" rel="noopener noreferrer" className="leetcode">LC</a>
-          </div>
+          ))}
+        </nav>
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setMenuOpen((previous) => !previous)}
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
+      </div>
 
-          {/* Navigation Menu */}
-          <nav id="navmenu" className="navmenu">
-            <ul>
-              <li><a href="#hero" onClick={handleNavClick}><FontAwesomeIcon icon={faHouse} className="navicon" />Home</a></li>
-              <li><a href="#about" onClick={handleNavClick}><FontAwesomeIcon icon={faUser} className="navicon" />About</a></li>
-              <li><a href="#resume" onClick={handleNavClick}><FontAwesomeIcon icon={faFile} className="navicon" />Resume</a></li>
-              <li><a href="#portfolio" onClick={handleNavClick}><FontAwesomeIcon icon={faImage} className="navicon" />Portfolio</a></li>
-              <li><a href="#services" onClick={handleNavClick}><FontAwesomeIcon icon={faServer} className="navicon" />Services</a></li>
-              <li><a href="#contact" onClick={handleNavClick}><FontAwesomeIcon icon={faEnvelope} className="navicon" />Contact</a></li>
-            </ul>
-          </nav>
-        </header>
-      )}
-    </>
+      <nav
+        id="mobile-nav"
+        className={`mobile-nav ${menuOpen ? 'is-open' : ''}`}
+        aria-label="Mobile section navigation"
+      >
+        {navItems.map((item) => (
+          <a key={item.href} href={item.href} onClick={closeMenu}>
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </header>
   );
-};
+}
 
 export default Header;

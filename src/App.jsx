@@ -1,43 +1,36 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-// Import components
-import Header from './components/layout/Header';
+import './styles/app-shell.css';
+import './styles/effects.css';
+import './styles/layout.css';
+import './styles/sections.css';
+import './styles/responsive.css';
+import BackgroundEffects from './components/effects/BackgroundEffects';
 import Footer from './components/layout/Footer';
-import ScrollToTop from './components/layout/ScrollToTop';
+import Header from './components/layout/Header';
+import Curiosity from './components/sections/Curiosity';
 import Hero from './components/sections/Hero';
-import About from './components/sections/About';
+import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
-import Resume from './components/sections/Resume';
-import Portfolio from './components/sections/Portfolio';
-import Services from './components/sections/Services';
-import Contact from './components/sections/Contact';
+import Terminal from './components/sections/Terminal';
+import useRevealOnScroll from './hooks/useRevealOnScroll';
 
 function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }, []);
+  useRevealOnScroll();
 
   return (
-    <div className="app">
+    <div className="app-shell">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <BackgroundEffects />
       <Header />
-      <main className="main">
+      <main id="main-content" className="page">
         <Hero />
-        <About />
+        <Curiosity />
         <Skills />
-        <Resume />
-        <Portfolio />
-        <Services />
-        <Contact />
+        <Projects />
+        <Terminal />
       </main>
       <Footer />
-      <ScrollToTop />
     </div>
   );
 }

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="gha-grad" x1="13" y1="10" x2="52" y2="53" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8AB4FF" />
+      <stop offset="1" stop-color="#5B8CFF" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#0D1422" />
+  <path
+    d="M22 19.5C22 16.4624 24.4624 14 27.5 14C30.5376 14 33 16.4624 33 19.5C33 22.5376 30.5376 25 27.5 25C24.4624 25 22 22.5376 22 19.5Z"
+    fill="url(#gha-grad)"
+  />
+  <path
+    d="M40 44.5C40 41.4624 42.4624 39 45.5 39C48.5376 39 51 41.4624 51 44.5C51 47.5376 48.5376 50 45.5 50C42.4624 50 40 47.5376 40 44.5Z"
+    fill="url(#gha-grad)"
+  />
+  <path
+    d="M13 44.5C13 41.4624 15.4624 39 18.5 39C21.5376 39 24 41.4624 24 44.5C24 47.5376 21.5376 50 18.5 50C15.4624 50 13 47.5376 13 44.5Z"
+    fill="url(#gha-grad)"
+  />
+  <path
+    d="M31.2 22.7L41.9 40.8M24 43.5H40.1"
+    stroke="#EEF4FF"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+</svg>

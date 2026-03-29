@@ -1,69 +1,43 @@
-# MySite - Personal Portfolio
+# Sachinn P Portfolio
 
-A modern, responsive personal portfolio website built with React and Vite.
+A React + Vite portfolio with a dark terminal aesthetic, centered around one shared theme and a cleaner `src/` structure. The live app keeps the Three.js hero scene, canvas effects, custom cursor, orbiting skills, and typed terminal section, but the content and motion logic now live in dedicated modules instead of being scattered across the section components.
 
-## Features
+## Stack
 
-- 🎨 Modern, responsive design
-- 📧 Contact form with Formspree integration
-- 🚀 Fast loading with Vite
-- ⚡ Hot Module Replacement (HMR)
-- 📱 Mobile-friendly interface
+- Vite for local dev and static builds
+- React for the UI structure
+- Plain CSS for styling
+- Three.js from CDN for the hero model
+- Google Fonts for `Space Mono` and `Syne`
 
-## Setup
+## Local Development
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+npm run dev
+```
 
-3. Copy the environment variables file:
-   ```bash
-   cp .env.example .env
-   ```
+Build the production bundle with:
 
-4. Configure your environment variables in `.env`:
-   - `VITE_FORMSPREE_FORM_ID`: Your Formspree form ID (get it from [formspree.io](https://formspree.io/))
+```bash
+npm run build
+```
 
-5. Start the development server:
-   ```bash
-   npm run dev
-   ```
+Preview the production build with:
 
-## Environment Variables
+```bash
+npm run preview
+```
 
-This project uses the following environment variables:
+## Project Notes
 
-- `VITE_FORMSPREE_FORM_ID`: Required for the contact form to work. Get your form ID by creating a form at [Formspree](https://formspree.io/).
-
-**Note**: All environment variables for Vite must be prefixed with `VITE_` to be accessible in the client-side code.
-
-## Contact Form
-
-The contact form is powered by Formspree, which provides a simple way to handle form submissions without a backend. The form includes:
-
-- Real-time validation
-- Loading states
-- Success/error feedback
-- Spam protection (via Formspree)
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run lint` - Run ESLint
-- `npm run preview` - Preview production build
-
-## Tech Stack
-
-- **React** - UI framework
-- **Vite** - Build tool and dev server
-- **Formspree** - Form handling service
-- **FontAwesome** - Icons
-- **Bootstrap** - CSS framework
-- **AOS** - Animations on scroll
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- No environment variables are required for the current site.
+- The portfolio is rendered through the React entrypoint in [`src/main.jsx`](/home/sachinn-p/Codes/MySite/src/main.jsx).
+- Shared copy and project data live in [`src/content/siteContent.js`](/home/sachinn-p/Codes/MySite/src/content/siteContent.js).
+- Shared animation logic lives in [`src/hooks`](/home/sachinn-p/Codes/MySite/src/hooks).
+- Reusable UI primitives live in [`src/components/common`](/home/sachinn-p/Codes/MySite/src/components/common).
+- Small shared utilities live in [`src/utils`](/home/sachinn-p/Codes/MySite/src/utils).
+- Theme tokens live in [`src/theme/tokens.css`](/home/sachinn-p/Codes/MySite/src/theme/tokens.css).
+- Styles are split by concern under [`src/styles`](/home/sachinn-p/Codes/MySite/src/styles).
+- Project-owned icons for the live skills orbit live under [`src/assets/icons`](/home/sachinn-p/Codes/MySite/src/assets/icons).
+- Legacy Bootstrap/template sections and vendor bundles were removed from the active `src/` tree.
