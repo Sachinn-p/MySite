@@ -120,10 +120,31 @@
 
   .hero {
     padding-top: calc(var(--nav-height) + var(--space-5));
+    min-height: auto;
+  }
+
+  .hero-grid {
+    row-gap: var(--space-3);
+  }
+
+  .hero-text-block {
+    max-width: 100%;
   }
 
   .hero-text-block h1 {
-    font-size: clamp(3rem, 16vw, 4.8rem);
+    margin-bottom: var(--space-2);
+    font-size: clamp(2.9rem, 15vw, 4.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.065em;
+  }
+
+  .hero-text-block p {
+    font-size: 1rem;
+    line-height: 1.58;
+  }
+
+  .hero-description {
+    max-width: 34ch;
   }
 
   #three-container {
@@ -165,6 +186,11 @@
     gap: 12px;
   }
 
+  .hero-pill {
+    width: fit-content;
+    max-width: 100%;
+  }
+
   .cta-row {
     width: 100%;
   }
@@ -200,6 +226,43 @@
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: calc(var(--nav-height) + var(--space-4));
+  }
+
+  .hero-text-block h1 {
+    font-size: clamp(2.45rem, 15.5vw, 3.35rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-description {
+    max-width: 30ch;
+  }
+
+  .hero-pill {
+    width: 100%;
+  }
+
+  .cta-row {
+    gap: 12px;
+  }
+
+  .cta-button {
+    flex-basis: 100%;
+  }
+
+  .hero-profile-card {
+    min-height: 390px;
+    padding: var(--space-2);
+  }
+
+  .hero-photo-frame {
+    width: min(100%, 240px);
   }
 }
 

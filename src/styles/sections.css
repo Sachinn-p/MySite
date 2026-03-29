@@ -28,6 +28,7 @@
   font-size: clamp(4rem, 8vw, 7rem);
   line-height: 0.94;
   letter-spacing: -0.08em;
+  text-wrap: balance;
 }
 
 .hero-text-block .accent-line {
