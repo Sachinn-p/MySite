@@ -53,6 +53,14 @@
     grid-template-columns: 1fr;
   }
 
+  .live-systems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-system-card {
+    min-height: auto;
+  }
+
   #three-container {
     opacity: 0.52;
   }
@@ -200,10 +208,6 @@
     flex: 1 1 180px;
   }
 
-  .curiosity-grid {
-    grid-template-columns: 1fr;
-  }
-
   .skills-inner {
     padding: 14px;
   }
@@ -212,6 +216,46 @@
   #skills-canvas {
     min-height: 390px;
     height: 390px;
+  }
+
+  .live-system-card {
+    gap: 20px;
+    padding: 22px 18px;
+  }
+
+  .live-system-header {
+    display: grid;
+    gap: 10px;
+  }
+
+  .live-system-role {
+    max-width: none;
+    text-align: left;
+  }
+
+  .live-system-body h3 {
+    font-size: 1.62rem;
+  }
+
+  .live-system-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .live-flow-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px;
+    width: 100%;
+  }
+
+  .live-flow-step {
+    width: 100%;
+  }
+
+  .live-flow-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
   }
 
   .project-row {
@@ -263,6 +307,14 @@
 
   .hero-photo-frame {
     width: min(100%, 240px);
+  }
+
+  .live-system-stack span {
+    width: 100%;
+  }
+
+  .live-system-link {
+    width: 100%;
   }
 }
 

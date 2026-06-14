@@ -6,8 +6,8 @@ import './styles/responsive.css';
 import BackgroundEffects from './components/effects/BackgroundEffects';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
-import Curiosity from './components/sections/Curiosity';
 import Hero from './components/sections/Hero';
+import LiveSystems from './components/sections/LiveSystems';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Terminal from './components/sections/Terminal';
@@ -25,8 +25,8 @@ function App() {
       <Header />
       <main id="main-content" className="page">
         <Hero />
-        <Curiosity />
         <Skills />
+        <LiveSystems />
         <Projects />
         <Terminal />
       </main>

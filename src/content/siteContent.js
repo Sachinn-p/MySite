@@ -14,8 +14,8 @@ export const siteMeta = {
 
 export const navItems = [
   { href: '#hero', label: 'Hero' },
-  { href: '#curiosity', label: 'Curiosity' },
   { href: '#skills', label: 'Skills' },
+  { href: '#live-systems', label: 'Live' },
   { href: '#projects', label: 'Projects' },
   { href: '#terminal', label: 'Terminal' },
   { href: '#footer', label: 'PiNG-ME!' },
@@ -26,7 +26,7 @@ export const heroContent = {
   heading: ["I'm a", 'Software', 'Engineer.'],
   description:
     'I go down rabbit holes, read the protocol docs, break systems on purpose, and then rebuild them cleaner. My center of gravity is backend engineering with a growing obsession for AI wrangling, source code clarity, and system design that stays calm under pressure.',
-  pills: ['FastAPI / React / Docker / Azure', 'Backend Intern at WAY2SKILLS', siteMeta.location],
+  pills: ['FastAPI / React / Docker / Azure', 'Freelancer', siteMeta.location],
   profile: {
     label: 'Curious freak / backend-first',
     blurb: 'Reading specs, breaking assumptions, and rebuilding calmer systems.',
@@ -40,46 +40,6 @@ export const heroContent = {
     label: 'Ping Me',
   },
 };
-
-export const curiositySection = {
-  eyebrow: 'Curiosity cards',
-  title: 'Patterns I keep returning to.',
-  copy:
-    'The work changes, the stack changes, the questions get stranger. These are the habits that stay glued to how I think, debug, and build.',
-};
-
-export const curiosityCards = [
-  {
-    title: 'I start from the Protocol specification.',
-    copy: 'That is where the system is defined, not the abstraction.',
-    label: '01 / protocol',
-  },
-  {
-    title: 'I break things on purpose',
-    copy: 'I trust software more after I have seen how it fails, bends, and recovers.',
-    label: '02 / failure',
-  },
-  {
-    title: 'Stack agnostic',
-    copy: 'Tools matter, but I care more about the constraints, tradeoffs, and data flow.',
-    label: '03 / systems',
-  },
-  {
-    title: 'AI wrangler',
-    copy: 'I like turning model capability into useful behavior, grounded outputs, and real product flow.',
-    label: '04 / models',
-  },
-  {
-    title: 'Source code instincts',
-    copy: 'I care about structure, readability, naming, and code that still makes sense later.',
-    label: '05 / craft',
-  },
-  {
-    title: 'System design mapper',
-    copy: 'I build mental diagrams of APIs, services, boundaries, and failure paths before coding.',
-    label: '06 / design',
-  },
-];
 
 export const skillsSection = {
   eyebrow: 'Skills orbit',
@@ -102,10 +62,6 @@ export const skillRings = [
       {
         name: 'FastAPI',
         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
-      },
-      {
-        name: 'Django',
-        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
       },
       {
         name: 'Flask',
@@ -135,6 +91,10 @@ export const skillRings = [
         name: 'Nginx',
         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg',
       },
+      {
+        name: 'Caddy',
+        src: 'https://cdn.simpleicons.org/caddy/7fefbd',
+      },
     ],
   },
   {
@@ -146,6 +106,14 @@ export const skillRings = [
       {
         name: 'Azure',
         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+      },
+      {
+        name: 'AWS',
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+      },
+      {
+        name: 'PostgreSQL',
+        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
       },
       {
         name: 'MongoDB',
@@ -187,11 +155,46 @@ export const skillRings = [
         name: 'GitHub Actions',
         src: githubActionsIcon,
       },
-      {
-        name: 'Java',
-        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-      },
     ],
+  },
+];
+
+export const liveSystemsSection = {
+  eyebrow: 'Live systems & deployments',
+  title: 'Production work that had to stay calm.',
+  copy:
+    'Systems built for real users, institutional workflows, billing operations, and deployment paths where reliability matters more than the demo glow.',
+};
+
+export const liveSystems = [
+  {
+    name: 'Admission Portal',
+    role: 'Backend & DevOps Developer',
+    status: 'Live',
+    href: 'https://admission.kongunadu.ac.in/',
+    summary:
+      'Designed and deployed a scalable digital admission management system used during official institutional admission cycles.',
+    highlights: [
+      'Built modular ReactJS multi-section forms integrated with FastAPI and PostgreSQL.',
+      'Implemented JWT authentication, structured validation, RESTful APIs, and workflow automation.',
+      'Shipped a reliable production platform for real admission operations.',
+    ],
+    stack: ['ReactJS', 'FastAPI', 'PostgreSQL', 'JWT', 'REST APIs'],
+    flow: ['ReactJS forms', 'FastAPI APIs', 'JWT validation', 'PostgreSQL'],
+  },
+  {
+    name: 'MLB POS',
+    role: 'Backend & DevOps Developer',
+    status: 'Production',
+    summary:
+      'Built a scalable POS billing and stock tracking system for centralized multi-shop administration.',
+    highlights: [
+      'Delivered billing and inventory flows with FastAPI, React Native, PostgreSQL, and AWS EC2.',
+      'Optimized RESTful APIs for faster billing operations and centralized tracking.',
+      'Implemented GitHub Actions CI/CD pipelines for automated, reliable production delivery.',
+    ],
+    stack: ['FastAPI', 'React Native', 'PostgreSQL', 'AWS EC2', 'GitHub Actions'],
+    flow: ['React Native POS', 'FastAPI services', 'PostgreSQL stock', 'AWS EC2 deploy'],
   },
 ];
 
@@ -216,13 +219,6 @@ export const projects = [
       'Real-time FastAPI services, React frontend, MongoDB-backed flows, Firebase auth, and LLaMA-driven question generation for adaptive quiz behavior.',
     tags: ['FastAPI', 'React', 'LLaMA', 'MongoDB'],
     href: 'https://github.com/Sachinn-p/Quiz_App',
-  },
-  {
-    title: 'College Admission Portal',
-    copy:
-      'Live digital admission system with multi-section validation, Firebase OAuth, Google Apps Script automation, and production-ready process flow for official use.',
-    tags: ['React', 'Firebase OAuth', 'JavaScript', 'Google Apps Script'],
-    href: 'https://admission.kongunadu.ac.in/',
   },
   {
     title: 'Roadmap Generation Tool',
