@@ -10,7 +10,7 @@ function Footer() {
         </div>
         <div className="footer-links">
           {footerLinks.map((link) => (
-            <a key={link.label} {...getLinkProps(link.href)}>
+            <a key={link.label} {...getLinkProps(link.href, link.rel)}>
               {link.label}
             </a>
           ))}

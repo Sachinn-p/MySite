@@ -5,7 +5,8 @@ export const siteMeta = {
   name: 'Sachinn P',
   email: 'sachinn2413@gmail.com',
   github: 'https://github.com/Sachinn-p',
-  linkedin: 'https://linkedin.com/in/sachinn-p',
+  linkedin: 'https://www.linkedin.com/in/sachinn-p/',
+  linkedinId: 'sachinn-p',
   location: 'Namakkal, Tamil Nadu',
   motto: 'Go deep. Break things. Learn why.',
   description:
@@ -244,7 +245,7 @@ export const terminalLines = [
 ];
 
 export const footerLinks = [
-  { href: siteMeta.github, label: 'GitHub' },
-  { href: siteMeta.linkedin, label: 'LinkedIn' },
+  { href: siteMeta.github, label: 'GitHub', rel: 'me' },
+  { href: siteMeta.linkedin, label: 'LinkedIn', rel: 'me' },
   { href: `mailto:${siteMeta.email}`, label: 'Email' },
 ];

@@ -1,4 +1,4 @@
-export const getLinkProps = (href) => {
+export const getLinkProps = (href, rel) => {
   if (!href) {
     return {};
   }
@@ -7,7 +7,7 @@ export const getLinkProps = (href) => {
     return {
       href,
       target: '_blank',
-      rel: 'noreferrer',
+      rel: rel ? `${rel} noreferrer` : 'noreferrer',
     };
   }
 
